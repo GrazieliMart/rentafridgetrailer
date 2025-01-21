@@ -2,59 +2,548 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+
     <title>Rent a Fridge Trailer</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
+
         body {
-            background-color: #f0f8ff; /* Leve tom de azul */
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
         }
-        .offcanvas-start {
-            width: 250px; /* Largura do menu no modo celular */
+
+        .navbar {
+            position: sticky;
+            top: 70px;
+            z-index: 1000;
+            display: grid;
+            width: 60%;
+            justify-content: center;
+            margin: 0 auto;
+            border-radius: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+            font-size: var(--bs-nav-link-font-size);
+            font-weight: 600;
+            color: rgb(0, 132, 220);
+            text-decoration: none;
+            transition: color 0.15s ease-in-out;
+            border-bottom: 3px solid rgba(0, 99, 180, 0);
+        }
+
+        .navbar-expand-lg .navbar-nav .dropdown-menu {
+            position: absolute;
+            background: #ffffff;
+            transition: 0.2s;
+            border: none;
+            border-radius: 0px;
+        }
+
+        .nav-link i {
+            margin-left: 5px;
+            font-size: 0.5rem;
+            transition: transform 0.2s ease; 
+        }
+
+        .nav-link:hover {
+           border-bottom: 3px solid rgb(0, 100, 180);
+           color: rgb(0, 100, 180);
+        }   
+
+        .nav-link:hover i {
+            transform: rotate(90deg); 
+        }
+
+        .navbar-nav .dropdown-menu .dropdown-item {
+            color: rgb(0, 132, 220);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+
+        .me-2 {
+            margin-right: 0px !important;
+        }
+
+        .align-items-center {
+            margin-left: 30px;
+            gap: -10px;
+            align-items: center !important;
+        }
+
+        .navbar-nav .dropdown-menu .dropdown-item:hover {
+            text-decoration: underline;
+            color: rgb(0, 100, 180);
+        }
+
+        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+          display: block;
+        }
+
+        #hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 14, 49, 0.616); /* Overlay escuro */
+    pointer-events: none; /* Permite interação com os elementos abaixo */
+}
+
+#hero .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 1; /* Garante que o conteúdo fique acima do overlay */
+}
+
+        .content h2 {
+    font-size: 110px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 90px;
+    letter-spacing: -5px;
+    text-shadow: none;
+}
+.content h3{
+text-shadow: none;
+color: #ff7627;
+font-weight: 900;
+
+}
+
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+             display: block;
+        }
+
+        .dropdown-menu {
+             display: none;
+         }
+
+            .navbar-brand img{
+              height: 40px;
+         }
+
+         .bg-light {
+             --bs-bg-opacity: 1;
+            background-color: rgb(255 255 255) !important;
+        }
+
+        .dropdown-toggle::after{
+          display: none;
+         }
+
+        
+
+        .square-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px; 
+    padding: 0;
+    border-radius: 5px; 
+}
+
+    .btn-primary.square-btn {
+        width: 140px;
+        height: 40px;
+        border-radius: 0px;
+        border: none;
+        background-color: #1d386d; 
+        color: #fff;
+        font-weight: 900;
+    }
+    .align-buttons button{
+        width: 100px;
+        border: none;
+        height: 40px;
+        border-radius: 0px;
+        background-color: #006eff; 
+        color: #fff;
+        font-weight: 900;
+    }
+    .align-buttons button:hover{
+        background-color: #1d386d;
+    }
+    .align-buttons{
+        gap: 120px;
+    }
+
+    .btn-secondary.square-btn {
+        width: 100px;
+        border: none;
+        height: 40px;
+        border-radius: 0px;
+        background-color: #2064E7; 
+        color: #fff;
+        font-weight: 900;
+    }
+    .btn-secondary.square-btn:hover {
+        font-weight: 900;
+        color: #4d98df;
+    }
+    .btn-primary.square-btn:hover{
+        font-weight: 900;
+        color: #2e9aff;
+    }
+.faixa-nav{
+    background-color: #1d386d;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.align-faixa-nav{
+    background-color: #1d386d;
+    width: 100%;
+    height: 60px;
+    margin-top: -60px;
+    justify-content: center;
+    display: grid;
+}
+.align-faixa-nav h2{
+    font-weight: 900;
+    margin-top: 20px;
+    font-size: 17px;
+    color: rgb(238, 238, 238);
+}
+
+.content h2, h3 {
+     
+      font-weight: bold;
+     
+      opacity: 0;
+      transform: translateY(-50px); /* Começa fora da tela, acima */
+      animation: slideDown 1s ease-out forwards; /* Animação suave */
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px); /* Posição inicial acima */
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0); /* Posição final */
+      }
+    }
+    @media (max-width: 768px) {
+        .navbar {
+        position: sticky;
+        top: 50px;
+        width: 100%;
+        justify-content: left;
+        margin: 0 auto;
+        border-radius: 0px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+.align-faixa-nav h2 {
+    font-weight: 900;
+    margin-top: 14px;
+    font-size: 13px;
+    color: rgb(238, 238, 238);
+}
+.content h3 {
+    text-shadow: none;
+    color: #ff7627;
+    font-size: 13px;
+    font-weight: 900;
+}
+.content p {
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+.content h2 {
+    font-size: 55px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 50px;
+    letter-spacing: 2;
+    text-shadow: none;
+}
+            .faixa-nav {
+    background-color: #1d386d;
+    width: 100%;
+    margin-bottom: 20px;
+    justify-content: center;
+    display: grid
+;
+    text-align: center;
+}
+.align-items-center {
+    margin-left: 30px;
+    gap: -10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    align-items: center !important;
+}
+}
+
+        
+</style>
+
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Brand</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasNav" aria-label="Toggle navigation">
+           
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavLabel">Menu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="homeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Home 
+                        </a>
+                      
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Applications <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <li><a class="dropdown-item" href="#">Our Team</a></li>
+                            <li><a class="dropdown-item" href="#">Our Story</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="#">Event Rentals</a></li>
+                            <li><a class="dropdown-item" href="#">Emergency Refrigeration</a></li>
+                            <li><a class="dropdown-item" href="#">Custom Solutions</a></li>
+                        </ul>
+                    </li>
+             
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="faqDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hire a Fridge <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="faqDropdown">
+                            <li><a class="dropdown-item" href="#">General Questions</a></li>
+                            <li><a class="dropdown-item" href="#">Technical Support</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About us <i class="bi bi-chevron-right"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+                            <li><a class="dropdown-item" href="#">About RFT</a></li>
+                            <li><a class="dropdown-item" href="#">Big Blue Bus Company</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-primary square-btn me-2">Request a Quote</button>
+                    <button class="btn btn-secondary square-btn">Contact Us</button>
                 </div>
             </div>
         </div>
     </nav>
+  
 
-    <!-- Content -->
+
+    <div class="align-faixa-nav">
+        <div class="faixa-nav"><h2>+353 86 055 9935  I  thebigbluebuspizzeria@gmail.com</h2></div></div>
+    <!-- Hero Section -->
+    <div id="hero">
+        <video autoplay muted loop>
+            <source src="assets/back.webm" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay"></div> <!-- Overlay escuro -->
+        <div class="content">
+            <h3>We handle all delivery & set up</h3>
+            <h2>Rent a Fridge Trailer</h2>
+            <p>
+              Our friendly, helpful and dedicated team can deliver to any location at any time,
+              <strong> day</strong> or <strong>night.</strong>
+            </p>
+            <div class="align-buttons">
+              <button>Freezers</button>
+              <button>More info</button>
+            </div>
+          </div>
+    </div>
+    <script>
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('.navbar');
+    
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (currentScroll > lastScrollTop) {
+                // Rolando para baixo - esconder a navbar
+                navbar.style.transform = 'translateY(-220%)';
+            } else {
+                // Rolando para cima - mostrar a navbar
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Evita valores negativos
+        });
+    </script>
+    
+    <!-- Main Content -->
     <div class="container mt-5">
-        <h1>Welcome to the Rent a Fridge Trailer</h1>
-        <p>This is the beginning...</p>
+        <!-- About Section -->
+        <section id="about" class="mt-5">
+            <h2>About Us</h2>
+            <p>Rentafridgetrailer was established in 2018 as there was a shortage of affordable refrigerated/freezer trailers for hire , we have expanded our client base to most areas of Ireland.
+                <br><br>
+                Our friendly, helpful and dedicated team can deliver to any location at any time, day or night. We provide one of the most professional and reliable services for refrigeration refits, temperature controlled storage and on-site backup when you need it most. We are located in North County Wicklow. For further enquiries please get in touch via the <a href="contact.html">contact page</a> or give us <a href="">a call.</a>
+            </p>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="mt-5">
+            <h2>Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Event Rentals</h3>
+                    <p>Keep your food and drinks cool during events with our state-of-the-art fridge trailers.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Emergency Refrigeration</h3>
+                    <p>We provide fast and reliable refrigeration solutions during power outages or other emergencies.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>Custom Solutions</h3>
+                    <p>Need something specific? We offer tailored refrigeration solutions to fit your unique requirements.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="mt-5">
+            <h2>What Our Clients Say</h2>
+            <blockquote class="blockquote">
+                <p>"Amazing service! The fridge trailer was a lifesaver at our wedding."</p>
+                <footer class="blockquote-footer">Emily R.</footer>
+            </blockquote>
+            <blockquote class="blockquote">
+                <p>"Fast delivery and great customer support. Highly recommend!"</p>
+                <footer class="blockquote-footer">James T.</footer>
+            </blockquote>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="mt-5">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqHeading1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                            How much does it cost to rent a fridge trailer?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1">
+                        <div class="accordion-body">
+                            Our pricing depends on the duration and type of trailer. Contact us for a quote!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqHeading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                            Do you deliver the trailers?
+                        </button>
+                    </h2>
+                    <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2">
+                        <div class="accordion-body">
+                            Yes, we offer delivery and pickup services for your convenience.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mt-5">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
     </div>
 
+    <!-- Footer -->
+    <footer class="mt-5">
+        <div class="container text-center">
+            <p>&copy; 2025 Rent a Fridge Trailer. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
     <!-- Bootstrap JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
