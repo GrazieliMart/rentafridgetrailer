@@ -13,24 +13,260 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
+        /* Personalizar barra de rolagem para navegadores baseados em Webkit */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f8ff; /* Cor de fundo do trilho */
+    border-radius: 0px; /* Borda arredondada */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #0078d4, #00a2ff); /* Gradiente azul */
+    border-radius: 0px; /* Borda arredondada */
+    border: 2px solid #f0f8ff; /* Espaço ao redor do thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #005bb5, #0078d4); /* Cor ao passar o mouse */
+}
+footer .col-md-4 img{
+    height: 300px;
+}
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgb(224, 224, 224) !important;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.212); /* Sombra externa no topo */
+}
+
+footer{
+
+    justify-content: center;
+    display: grid;
+    align-items: center;
+}
+footer .row {
+    --bs-gutter-x: 1.5rem;
+    color: #414856;
+    --bs-gutter-y: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+footer .col-md-4 {
+    flex: 0 0 auto;
+    width: 20%;
+    padding: 70px;
+}
+#services{
+    padding: 0px 200px ;
+}
+.titlle-div .btn-primary.square-btn{
+    margin-top: -50px;
+    width: 300px;
+    font-size: 25px;
+}
+.text-center{
+    color: #414856;
+}
+.text-center hr{
+    color: #005bb5;
+    background-color: #005bb5;
+    border: #005bb5 3px solid;
+}
+.titlle-div {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0px 0px;
+
+}.titlle-div h2{
+    font-size: 65px;
+    line-height: 90px;
+    letter-spacing: -2px;
+    font-weight: 900;
+}
+.titlle-div p{ width: 800px;
+font-size: 30px;
+}
+#services .row .col-md-4 {
+    text-align: center;
+}
+#services .row .col-md-4 h3{
+    font-size: 40px;
+    color: #1d386d;
+}
+
+#services .row .col-md-4 img{
+ height: 440px;
+ transition: 0.2s;
+}
+#services .row .col-md-4 img:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+
+}
+
+.rent-a-fridge {
+            position: fixed;
+            right: 20px;
+            top: 85%;
+            transform: translateY(-50%);
+            background-color: #ff762700;
+            color: #006eff;
+            z-index: 999;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
+        }
+
+      
+        .rent-a-fridge i{
+            color: #006eff;
+        }
+        .rent-a-fridge a:hover i {
+   color: #fff;
+    transition: 0.2s; /* Suaviza a transição da cor */
+}
+
+
+.floating-buttons {
+    position: fixed;
+    display: flex
+;
+    z-index: 999;
+    right: 20px;
+    top: 0%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 10px;
+}
+/* Estilo dos botões */
+.floating-buttons a {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: #007bff;
+    opacity: 1; /* Totalmente visível */
+    visibility: visible; /* Sempre visível */
+    transform: translateY(0); /* Posição inicial */
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.floating-buttons a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+        .floating-buttons a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Animações individuais */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+        .floating-buttons a {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: #007bff;
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Não ocupa espaço */
+    transform: translateY(20px); /* Fora da posição */
+    transition: all 0.3s ease; /* Transição suave */
+}
+
+.floating-buttons a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Aparecendo */
+.floating-buttons a.show {
+    opacity: 1; /* Totalmente visível */
+    visibility: visible; /* Ocupa espaço */
+    transform: translateY(0); /* Volta à posição inicial */
+}
+
+/* Desaparecendo */
+.floating-buttons a.hide {
+    opacity: 0; /* Invisível */
+    visibility: hidden; /* Ocupa espaço novamente após a transição */
+    transform: translateY(20px); /* Move para baixo */
+}
+/* Para navegadores que não suportam Webkit */
+body {
+    scrollbar-color: #0078d4 #f0f8ff; /* Azul para o thumb, fundo claro para o trilho */
+    scrollbar-width: thin; /* Barra de rolagem fina */
+}
 
         body {
+            overflow-x: hidden;
             margin: 0;
             font-family: 'Montserrat', Arial, sans-serif;
         }
-
-        .navbar {
-            position: sticky;
-            top: 70px;
-            z-index: 1000;
-            display: grid;
-            width: 60%;
-            justify-content: center;
-            margin: 0 auto;
-            border-radius: 50px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+        .about a{
+            color: #ffa470;
         }
+        .about a:hover{
+            cursor: pointer;
+            color: #ca530e;
+            transition: 0.2s;
+        }
+       .navbar {
+    position: sticky;
+    top: 50px;
+    z-index: 1000;
+    display: grid
+;
+    width: 60%;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
 
         .nav-link {
             display: flex;
@@ -125,8 +361,51 @@
     text-align: center;
     z-index: 1; /* Garante que o conteúdo fique acima do overlay */
 }
+#hero {
+    width: 100%;
+    height: 100vh; /* Inicia com a altura total da tela */
+    position: relative;
+    transition: height 0.2s ease; /* Transição suave */
+}
 
-        .content h2 {
+#hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 14, 49, 0.616); /* Overlay escuro */
+    pointer-events: none; /* Permite interação com os elementos abaixo */
+}
+
+#hero .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 1; /* Garante que o conteúdo fique acima do overlay */
+}
+@keyframes slideColor {
+    0% {
+        transform: translateY(-100%); /* Começa fora da tela acima */
+    }
+    50% {
+        transform: translateY(0); /* Move-se para a posição normal */
+    }
+    100% {
+        transform: translateY(100%); /* Sai para fora da tela abaixo */
+    }
+}
+
+      .content h2 {
     font-size: 110px;
     font-weight: 900;
     text-transform: uppercase;
@@ -142,20 +421,54 @@ font-weight: 900;
 }
 
 
-        footer {
-            background-color: #343a40;
-            color: white;
-            padding: 20px 0;
-        }
+footer {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
 
-        footer a {
-            color: #f8f9fa;
-            text-decoration: none;
-        }
+footer h5 {
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: #1d386d;
+    margin-bottom: 1rem;
+}
+footer ul {
+    padding: 0;
+    list-style: none;
+}
 
-        footer a:hover {
-            text-decoration: underline;
-        }
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+footer .text-white  {
+    font-weight: 800;
+    --bs-text-opacity: 1;
+    color: rgb(0 132 220) !important;
+}
+footer .text-white:hover  {
+    font-weight: 800;
+
+    border-bottom: 3px;
+    --bs-text-opacity: 1;
+    color: rgb(7, 82, 133) !important;
+}
+footer .bi {
+    font-size: 1.2rem;
+}
+
+footer .me-2 {
+    margin-right: 0.5rem;
+}
+footer .social{
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+}
+
 
         .navbar-nav .nav-item.dropdown:hover .dropdown-menu {
              display: block;
@@ -170,9 +483,9 @@ font-weight: 900;
          }
 
          .bg-light {
-             --bs-bg-opacity: 1;
-            background-color: rgb(255 255 255) !important;
-        }
+    --bs-bg-opacity: 1;
+    background-color: rgb(241 243 243) !important;
+}
 
         .dropdown-toggle::after{
           display: none;
@@ -272,6 +585,37 @@ font-weight: 900;
         transform: translateY(0); /* Posição final */
       }
     }
+    
+    .about {
+    width: 100%;
+    margin-top: -50px;
+    background-color: #1d386d;
+    padding: 100px 200px;
+    color: #f8f9fa;
+    
+}
+.about h2{
+    font-weight: 900;
+    font-size: 35px;
+}
+.about p{
+    font-size: 22px;
+}
+.mt-5 {
+    margin-top: -10px;
+}
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 100%;
+    }
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: none;
+}
     @media (max-width: 768px) {
         
 .content h2, h3 {
@@ -283,8 +627,9 @@ font-weight: 900;
  
    }
         .navbar {
+            padding: 20px;
         position: sticky;
-        top: 50px;
+        top: 0px;
         width: 100%;
         justify-content: left;
         margin: 0 auto;
@@ -305,18 +650,29 @@ font-weight: 900;
     font-size: 13px;
     font-weight: 900;
 }
+#hero .content {
+    position: absolute;
+    width: 300px;
+    top: 50%;
+    margin-bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
 .content p {
     margin-top: 0;
     margin-bottom: 3rem;
 }
 .content h2 {
-    font-size: 55px;
-    font-weight: 900;
-    text-transform: uppercase;
-    line-height: 50px;
-    letter-spacing: 2;
-    text-shadow: none;
-}
+        font-size: 45px;
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 50px;
+        letter-spacing: 2px;
+        text-shadow: none;
+    }
             .faixa-nav {
     background-color: #1d386d;
     width: 100%;
@@ -336,12 +692,335 @@ font-weight: 900;
 #hero {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     overflow: hidden;
 }
 }
 
-        
+        /* From Uiverse.io by javierBarroso */ 
+.wrapper {
+  --background: #ff7627;
+  --icon-color: #414856;
+  --shape-color-01: #b8cbee;
+  --shape-color-02: #7691e8;
+  --shape-color-03: #fdd053;
+  --width: 90px;
+  --height: 90px;
+  --border-radius: var(--height);
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .btn {
+  background: var(--background);
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+  z-index: 3;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: plus-animation-reverse 0.5s ease-out forwards;
+  animation: plus-animation-reverse 0.5s ease-out forwards;
+}
+.wrapper .btn::before,
+.wrapper .btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4px;
+  background: #ffffff;
+}
+.wrapper .btn::before {
+  width: 4px;
+  height: 28px;
+}
+.wrapper .btn::after {
+  width: 28px;
+  height: 4px;
+}
+.wrapper .tooltip {
+  width: fit-content;
+  height: 75px;
+  border-radius: 70px;
+  position: absolute;
+  background: #ffffff00;
+  z-index: 2;
+  padding: 20px 35px;
+  box-shadow: 0 10px 30px rgba(65, 72, 86, 0.05);
+  opacity: 0;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: opacity 0.15s ease-in, top 0.15s ease-in, width 0.15s ease-in;
+}
+.wrapper .tooltip > span {
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  opacity: 0;
+}
+.wrapper .tooltip > svg {
+  width: 100%;
+  height: 26px;
+  display: block;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.wrapper .tooltip > svg .icon {
+  fill: none;
+  stroke: var(--icon-color);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+.wrapper .tooltip > svg:hover .icon {
+  opacity: 1;
+}
+.wrapper .tooltip::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 3px;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  bottom: -8px;
+  transform: rotate(45deg);
+  z-index: 0;
+}
+.wrapper > svg {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  z-index: 1;
+  transform: scale(0);
+}
+.wrapper > svg .shape {
+  fill: none;
+  stroke: none;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform-origin: 50% 20%;
+}
+.wrapper input {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  position: absolute;
+  z-index: 5;
+  opacity: 0;
+}
+.wrapper input:checked ~ svg {
+  -webkit-animation: pang-animation 1.2s ease-out forwards;
+  animation: pang-animation 1.2s ease-out forwards;
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(1) {
+  transform: translate(25px, 30%) rotate(40deg);
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(2) {
+  transform: translate(-4px, 30%) rotate(80deg);
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(3) {
+  transform: translate(12px, 30%) rotate(120deg);
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(4) {
+  transform: translate(8px, 30%) rotate(160deg);
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(5) {
+  transform: translate(21px, 30%) rotate(200deg);
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(6) {
+  transform: translate(0px, 30%) rotate(240deg);
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(7) {
+  transform: translate(17px, 30%) rotate(280deg);
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(8) {
+  transform: translate(-3px, 30%) rotate(320deg);
+}
+.wrapper input:checked ~ svg .shape:nth-of-type(9) {
+  transform: translate(25px, 30%) rotate(360deg);
+}
+.wrapper input:checked ~ .btn {
+  -webkit-animation: plus-animation 0.5s ease-out forwards;
+  animation: plus-animation 0.5s ease-out forwards;
+}
+.wrapper input:checked ~ .tooltip {
+  width: fit-content;
+  padding: 30px;
+  -webkit-animation: stretch-animation 1s ease-out forwards 0.15s;
+  animation: stretch-animation 1s ease-out forwards 0.15s;
+  top: -90px;
+  opacity: 1;
+}
+
+.wrapper input:checked ~ .tooltip > span {
+  opacity: 1;
+}
+
+@-webkit-keyframes pang-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes pang-animation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes plus-animation {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  20% {
+    transform: rotate(60deg) scale(0.93);
+  }
+  55% {
+    transform: rotate(35deg) scale(0.97);
+  }
+  80% {
+    transform: rotate(48deg) scale(0.94);
+  }
+  100% {
+    transform: rotate(45deg) scale(0.95);
+  }
+}
+@keyframes plus-animation {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  20% {
+    transform: rotate(60deg) scale(0.93);
+  }
+  55% {
+    transform: rotate(35deg) scale(0.97);
+  }
+  80% {
+    transform: rotate(48deg) scale(0.94);
+  }
+  100% {
+    transform: rotate(45deg) scale(0.95);
+  }
+}
+@-webkit-keyframes plus-animation-reverse {
+  0% {
+    transform: rotate(45deg) scale(0.95);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  55% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes plus-animation-reverse {
+  0% {
+    transform: rotate(45deg) scale(0.95);
+  }
+  20% {
+    transform: rotate(-15deg);
+  }
+  55% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}
+@-webkit-keyframes stretch-animation {
+  0% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.1, 0.9);
+  }
+  30% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.05, 0.95);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes stretch-animation {
+  0% {
+    transform: scale(1, 1);
+  }
+  10% {
+    transform: scale(1.1, 0.9);
+  }
+  30% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.05, 0.95);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.socials {
+  position: fixed;
+  display: block;
+  left: 20px;
+  bottom: 20px;
+}
+.socials > a {
+  display: block;
+  width: 30px;
+  opacity: 0.2;
+  transform: scale(var(--scale, 0.8));
+  transition: transform 0.3s cubic-bezier(0.38, -0.12, 0.24, 1.91);
+}
+.socials > a:hover {
+  --scale: 1;
+}
+
 </style>
 
     </style>
@@ -410,10 +1089,80 @@ font-weight: 900;
         </div>
     </nav>
   
+    <div class="rent-a-fridge" id="rentFridgeButton">
+   
+        <div class="wrapper">
+          <input type="checkbox" />
+          <div class="btn"></div>
+          <div class="tooltip"><svg></svg><span>  <div class="floating-buttons" id="floatingButtons">
+            <a href="https://wa.me/353860559935" title="Call Us">
+                <i class="bi bi-telephone-fill"></i>
+            </a>
+            <a href="#hire" title="Hire Us">
+                <i class="bi bi-person-badge-fill"></i>
+            </a>
+            <a href="#contact" title="Contact Us">
+                <i class="bi bi-envelope-fill"></i>
+            </a>
+        </div></span></div>
+          <svg></svg>
+        </div>
+        
+    </div>
 
+    <!-- Botões flutuantes -->
+  
+
+    <script>
+        const rentFridgeButton = document.getElementById('rentFridgeButton');
+        const floatingButtons = document.getElementById('floatingButtons');
+        const buttons = floatingButtons.querySelectorAll('a');
+        let closeTimeout;
+
+        // Função para mostrar os botões com animação
+        function showFloatingButtons() {
+            buttons.forEach((button, index) => {
+                button.style.display = 'flex';
+                button.classList.remove('hide');
+                button.classList.add('show');
+                button.style.animationDelay = `${index * 0.1}s`; // Adiciona atraso para cada botão
+            });
+            resetCloseTimer();
+        }
+
+        // Função para ocultar os botões com animação
+        function hideFloatingButtons() {
+            buttons.forEach((button, index) => {
+                button.classList.remove('show');
+                button.classList.add('hide');
+                button.style.animationDelay = `${index * 0.1}s`;
+                setTimeout(() => {
+                    button.style.display = 'none';
+                }, 500); // Tempo igual ao da animação
+            });
+        }
+
+      
+        // Mostrar ou ocultar os botões ao clicar na div principal
+        rentFridgeButton.addEventListener('click', () => {
+            if (buttons[0].style.display === 'flex') {
+                hideFloatingButtons();
+            } else {
+                showFloatingButtons();
+            }
+        });
+
+     
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <div class="align-faixa-nav">
         <div class="faixa-nav"><h2>+353 86 055 9935  I  thebigbluebuspizzeria@gmail.com</h2></div></div>
+
+
+
     <!-- Hero Section -->
     <div id="hero">
         <video autoplay muted loop playsinline>
@@ -434,8 +1183,21 @@ font-weight: 900;
             </div>
           </div>
     </div>
+    <script>window.addEventListener('scroll', function() {
+        const hero = document.querySelector('#hero');
+        const scrollPosition = window.scrollY;
+        const maxHeight = 100; // Altura máxima do hero quando estiver no topo
+        const minHeight = 50; // Altura mínima do hero ao rolar
+    
+        // Calcular a nova altura com base na posição do scroll
+        const newHeight = Math.max(minHeight, maxHeight - (scrollPosition / 10));
+    
+        // Aplicar a nova altura à div do hero
+        hero.style.height = newHeight + 'vh';
+    });
+    
+    </script>
     <script>
-        let lastScrollTop = 0;
         const navbar = document.querySelector('.navbar');
     
         window.addEventListener('scroll', () => {
@@ -443,19 +1205,14 @@ font-weight: 900;
     
             // Verifica se está em uma tela de tamanho de celular (largura menor que 768px)
             if (window.innerWidth < 768) {
-                if (currentScroll > lastScrollTop) {
-                    // Rolando para baixo - esconder a navbar (no celular)
-                    navbar.style.transform = 'translateY(-100%)'; // Ocultar no topo
-                } else {
-                    // Rolando para cima - mostrar a navbar (no celular)
-                    navbar.style.transform = 'translateY(-90%)';
-                }
+                // No celular, a navbar fica fixa no topo
+                navbar.style.transform = 'translateY(0px)';
             } else {
                 // Comportamento padrão para telas maiores
                 if (currentScroll > lastScrollTop) {
-                    navbar.style.transform = 'translateY(-220%)';
+                    navbar.style.transform = 'translateY(-220%)'; // Ocultar ao rolar para baixo
                 } else {
-                    navbar.style.transform = 'translateY(0)';
+                    navbar.style.transform = 'translateY(-100%)'; // Mostrar ao rolar para cima
                 }
             }
     
@@ -467,34 +1224,45 @@ font-weight: 900;
     <!-- Main Content -->
     <div class="container mt-5">
         <!-- About Section -->
-        <section id="about" class="mt-5">
+         <div class="about">
+       
+            
             <h2>About Us</h2>
             <p>Rentafridgetrailer was established in 2018 as there was a shortage of affordable refrigerated/freezer trailers for hire , we have expanded our client base to most areas of Ireland.
                 <br><br>
                 Our friendly, helpful and dedicated team can deliver to any location at any time, day or night. We provide one of the most professional and reliable services for refrigeration refits, temperature controlled storage and on-site backup when you need it most. We are located in North County Wicklow. For further enquiries please get in touch via the <a href="contact.html">contact page</a> or give us <a href="">a call.</a>
             </p>
-        </section>
+      </div>
 
         <!-- Services Section -->
         <section id="services" class="mt-5">
+            <div class="titlle-div">
             <h2>Our Services</h2>
+        <p>Rent a Fridge Trailer offers three sizes available: 2m, 3m (double or single doors) and 4m unit.</p></div>
             <div class="row">
                 <div class="col-md-4">
-                    <h3>Event Rentals</h3>
-                    <p>Keep your food and drinks cool during events with our state-of-the-art fridge trailers.</p>
+                   <img src="assets/trailer1.png" alt="">
+                    <h3>2m Trailer</h3>
+                    <p>The door aperture is 750mm wide by 1.74m high. Gross weight: 2000kg, Payload: 1200kg.</p>
                 </div>
                 <div class="col-md-4">
-                    <h3>Emergency Refrigeration</h3>
-                    <p>We provide fast and reliable refrigeration solutions during power outages or other emergencies.</p>
+                    <img src="assets/trailer2.png" alt="">
+                    <h3>3m Trailer</h3>
+                    <p>The door aperture comes in two options: Single 800mm wide x 1900mm high or Double 1600mm wide x 1820mm high. Gross weight: 3500kg, Payload: 2400kg.</p>
                 </div>
                 <div class="col-md-4">
-                    <h3>Custom Solutions</h3>
-                    <p>Need something specific? We offer tailored refrigeration solutions to fit your unique requirements.</p>
+                    <img src="assets/trailer3.png" alt="">
+                    <h3>4m Trailer</h3>
+                    <p>The door aperture is 800mm wide by 1900mm high. Gross weight: 3500kg, Payload: 2500kg.</p>
                 </div>
+                <div class="titlle-div">
+                    <button class="btn btn-primary square-btn me-2">Trailers Details</button>
+                   <br><br> </div>
+                    
             </div>
         </section>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Section 
         <section id="testimonials" class="mt-5">
             <h2>What Our Clients Say</h2>
             <blockquote class="blockquote">
@@ -505,10 +1273,18 @@ font-weight: 900;
                 <p>"Fast delivery and great customer support. Highly recommend!"</p>
                 <footer class="blockquote-footer">James T.</footer>
             </blockquote>
-        </section>
+        </section>-->
+        <div id="hero">
+            <video autoplay muted loop playsinline>
+                <source src="assets/back.webm" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+       
+        </div>
 
         <!-- FAQ Section -->
         <section id="faq" class="mt-5">
+            <div class="about">
             <h2>Frequently Asked Questions</h2>
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
@@ -535,7 +1311,7 @@ font-weight: 900;
                         </div>
                     </div>
                 </div>
-            </div>
+            </div></div>
         </section>
 
         <!-- Contact Section -->
@@ -560,14 +1336,62 @@ font-weight: 900;
     </div>
 
     <!-- Footer -->
-    <footer class="mt-5">
-        <div class="container text-center">
-            <p>&copy; 2025 Rent a Fridge Trailer. All rights reserved.</p>
-            <p>
-                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-            </p>
+    <footer class="mt-5 bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+
+                   <!-- Sobre a Empresa -->
+                   <div class="col-md-4">
+                   <img src="assets/footer-img.png" alt="">
+                </div>
+
+                <!-- Sobre a Empresa -->
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>
+                        Rent a Fridge Trailer specializes in providing reliable, high-quality refrigerated trailer rentals for events, businesses, and emergencies. Our team is dedicated to excellent service, available day or night.
+                    </p>
+                </div>
+                
+                <!-- Links Rápidos -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li><a href="#services" class="text-white text-decoration-none">Our Services</a></li>
+                        <li><a href="#about" class="text-white text-decoration-none">About Us</a></li>
+                        <li><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contato -->
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>
+                        <i class="bi bi-geo-alt-fill"></i> 123 Refrigeration St., Dublin, Ireland<br>
+                        <i class="bi bi-telephone-fill"></i> +353 86 055 9935<br>
+                        <i class="bi bi-envelope-fill"></i> <a href="mailto:info@rentafridgetrailer.com" class="text-white text-decoration-none">info@rentafridgetrailer.com</a>
+                    </p>
+                    <h6>Follow Us</h6>
+                    <div class="social">
+                        <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <hr class="bg-white">
+            <div class="text-center">
+                <p>&copy; 2025 Rent a Fridge Trailer. All rights reserved.</p>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Privacy Policy</a> | 
+                    <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+                </p>
+            </div>
         </div>
     </footer>
+    
 
     <!-- Bootstrap JS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
