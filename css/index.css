@@ -1246,6 +1246,16 @@ footer .row {
     right: 0px;
     top: 90%;
 }
+.align-buttons button {
+  width: 130px;
+  border: none;
+  height: 40px;
+  font-size: 12px;
+  border-radius: 0px;
+  background-color: #006eff;
+  color: #fff;
+  font-weight: 900;
+}
 .beneficios-container {
     display: inline;
     justify-content: space-between;
