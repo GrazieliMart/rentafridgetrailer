@@ -642,9 +642,6 @@ document.addEventListener('click', function (event) {
             <div class="about" style="background-color: var(--shape-color-01);">
                 <h2>Contact Us</h2>
                 <form name="contact" method="POST" data-netlify="true">
-                    <!-- Campo oculto necessário para Netlify identificar o formulário -->
-                    <input type="hidden" name="form-name" value="contact">
-                    
                     <div class="mb-3">
                         <label for="name" class="form-label">Your Name</label>
                         <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
@@ -673,7 +670,7 @@ document.addEventListener('click', function (event) {
                     
                     <div class="mb-3">
                         <label for="productInterest" class="form-label">Product Interest</label>
-                        <div style="display: flex;">
+                        <div style="display: flex; flex-wrap: wrap;">
                             <div style="margin-right: 50px;">
                                 <div>
                                     <input type="checkbox" id="trailer2m" name="productInterest" value="2m Trailer" checked>
@@ -702,10 +699,9 @@ document.addEventListener('click', function (event) {
                         <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
                     </div>
                     
-          
-                    
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                
                 
                 
                 <div class="tittle-div">
