@@ -594,7 +594,7 @@ setInterval(changeImage, 3000);
         <section id="contact" class="mt-5" data-aos="fade-up">
             <div class="about" style="background-color: var(--shape-color-01);">
                 <h2>Contact Us</h2>
-                <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                <form name="contact" method="POST" data-netlify="true" >
                     <div class="mb-3">
                         <label for="name" class="form-label"></label>
                         <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
@@ -661,12 +661,11 @@ setInterval(changeImage, 3000);
                         <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
                     </div>
                 
-                    <!-- reCAPTCHA do Netlify -->
-                    <div class="g-recaptcha" data-sitekey="6LcSJtIqAAAAAIo9Pi39ncUrqfcPYgyOnD4XjQ3B"></div>
-                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+
                 <div class="tittle-div">
                     <p>If you need any further information please contact us or give us a ring as we will be happy to give any further advice you may need.
                     <br><br>

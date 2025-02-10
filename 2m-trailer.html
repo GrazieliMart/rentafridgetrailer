@@ -131,7 +131,7 @@ margin-top: 40px;}
     
     #parallax-section {
         position: relative;
-        background-image: url('assets/img\ \(1\).png'); /* Substitua pela sua imagem */
+        background-image: url('assets/parallax-3.png'); /* Substitua pela sua imagem */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -605,28 +605,32 @@ document.addEventListener('click', function (event) {
         <section id="contact" class="mt-5" data-aos="fade-up">
             <div class="about" style="background-color: var(--shape-color-01);">
                 <h2>Contact Us</h2>
-                <form name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
-                    <!-- Input Name -->
+                <form name="contact" method="POST" data-netlify="true" >
                     <div class="mb-3">
-                        <label for="name" class="form-label">Your Name</label>
+                        <label for="name" class="form-label"></label>
                         <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
                     </div>
                     
-                    <!-- Input Email -->
                     <div class="mb-3">
-                        <label for="email" class="form-label">Your Email</label>
+                        <label for="email" class="form-label"></label>
                         <input type="email" class="form-control" id="email" name="email" required placeholder="Your Email">
                     </div>
-                    
-                    <!-- Input Phone -->
+                
                     <div class="mb-3">
-                        <label for="phone" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" maxlength="16" required>
+                        <label for="phone" class="form-label"></label>
+                        <input 
+                            type="tel" 
+                            class="form-control" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="Phone Number" 
+                            maxlength="16"
+                            required>
                     </div>
                     
-                    <!-- Select Province -->
+                
                     <div class="mb-3">
-                        <label for="province" class="form-label">Select a Province</label>
+                        <label for="province" class="form-label"></label>
                         <select class="form-control" id="province" name="province" required>
                             <option value="" selected disabled>Select a Province</option>
                             <option value="Leinster">Leinster</option>
@@ -635,11 +639,11 @@ document.addEventListener('click', function (event) {
                             <option value="Ulster">Ulster</option>
                         </select>
                     </div>
-                    
-                    <!-- Checkbox Product Interest -->
+                
                     <div class="mb-3">
+                        <br>
                         <label for="productInterest" class="form-label">Product Interest</label>
-                        <div style="display: flex; flex-wrap: wrap;">
+                        <div style="display: flex;">
                             <div style="margin-right: 50px;">
                                 <div>
                                     <input type="checkbox" id="trailer2m" name="productInterest" value="2m Trailer">
@@ -662,40 +666,18 @@ document.addEventListener('click', function (event) {
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Textarea Message -->
+                
                     <div class="mb-3">
-                        <label for="message" class="form-label">Your Message</label>
+                        <label for="message" class="form-label"></label>
                         <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
                     </div>
-                    
-                    <!-- Submit Button -->
+                
+                
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                
-                <script>
-                    // Função para lidar com o envio do formulário
-                    function handleSubmit(event) {
-                        // Previne o comportamento padrão de envio do formulário
-                        event.preventDefault();
-                        
-                        // Exibe no console os dados do formulário
-                        const formData = new FormData(event.target);
-                        console.log('Form Data:', Object.fromEntries(formData.entries()));
-                        
-                        // Envia o formulário via fetch para simular o envio
-                        fetch(event.target.action, {
-                            method: 'POST',
-                            body: formData
-                        })
-                        .then(response => {
-                            console.log('Form submission success:', response);
-                        })
-                        .catch(error => {
-                            console.error('Form submission error:', error);
-                        });
-                    }
-                </script>
+
+
                 
                 
                 <div class="tittle-div">
