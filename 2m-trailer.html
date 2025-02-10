@@ -605,7 +605,7 @@ document.addEventListener('click', function (event) {
         <section id="contact" class="mt-5" data-aos="fade-up">
             <div class="about" style="background-color: var(--shape-color-01);">
                 <h2>Contact Us</h2>
-                <form name="contact" method="POST" data-netlify="true" action="/thank-you">
+                <form name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
                     <!-- Input Name -->
                     <div class="mb-3">
                         <label for="name" class="form-label">Your Name</label>
@@ -673,6 +673,30 @@ document.addEventListener('click', function (event) {
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 
+                <script>
+                    // Função para lidar com o envio do formulário
+                    function handleSubmit(event) {
+                        // Previne o comportamento padrão de envio do formulário
+                        event.preventDefault();
+                        
+                        // Exibe no console os dados do formulário
+                        const formData = new FormData(event.target);
+                        console.log('Form Data:', Object.fromEntries(formData.entries()));
+                        
+                        // Envia o formulário via fetch para simular o envio
+                        fetch(event.target.action, {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => {
+                            console.log('Form submission success:', response);
+                            window.location.href = '/thank-you';  // Redireciona para a página de agradecimento
+                        })
+                        .catch(error => {
+                            console.error('Form submission error:', error);
+                        });
+                    }
+                </script>
                 
                 
                 <div class="tittle-div">
