@@ -579,7 +579,7 @@ document.addEventListener('click', function (event) {
     <section>
         <div class="detail-div-align">
             <div class="detail-div"><img src="assets/img (3).png" alt=""><h3>10kw generator</h3> <p>The trailers require power from either a 13 amp square pin or 16amp round pin socket or a minimum 10 kw generator - We supply cables to connect to either supply.</p></div>
-            <div class="detail-div"><img src="assets/standart.png" alt=""><h3>Shelving as standard</h3> <p>They are adjustable, providing flexibility for different storage needs, and are typically included as part of a package.</p></div>
+            <div class="detail-div"><img src="assets/img (4).png" alt=""><h3>Shelving as standard</h3> <p>They are adjustable, providing flexibility for different storage needs, and are typically included as part of a package.</p></div>
         </div>
     </section>
     <section class="about">
@@ -644,31 +644,24 @@ document.addEventListener('click', function (event) {
                 <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
                     <!-- Campo oculto necessário para Netlify identificar o formulário -->
                     <input type="hidden" name="form-name" value="contact">
-                
+                    
                     <div class="mb-3">
-                        <label for="name" class="form-label"></label>
+                        <label for="name" class="form-label">Your Name</label>
                         <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
                     </div>
-                
+                    
                     <div class="mb-3">
-                        <label for="email" class="form-label"></label>
+                        <label for="email" class="form-label">Your Email</label>
                         <input type="email" class="form-control" id="email" name="email" required placeholder="Your Email">
                     </div>
-                
+                    
                     <div class="mb-3">
-                        <label for="phone" class="form-label"></label>
-                        <input 
-                            type="tel" 
-                            class="form-control" 
-                            id="phone" 
-                            name="phone" 
-                            placeholder="Phone Number" 
-                            maxlength="16"
-                            required>
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" maxlength="16" required>
                     </div>
-                
+                    
                     <div class="mb-3">
-                        <label for="province" class="form-label"></label>
+                        <label for="province" class="form-label">Select a Province</label>
                         <select class="form-control" id="province" name="province" required>
                             <option value="" selected disabled>Select a Province</option>
                             <option value="Leinster">Leinster</option>
@@ -677,9 +670,8 @@ document.addEventListener('click', function (event) {
                             <option value="Ulster">Ulster</option>
                         </select>
                     </div>
-                
+                    
                     <div class="mb-3">
-                        <br>
                         <label for="productInterest" class="form-label">Product Interest</label>
                         <div style="display: flex;">
                             <div style="margin-right: 50px;">
@@ -704,13 +696,16 @@ document.addEventListener('click', function (event) {
                             </div>
                         </div>
                     </div>
-                
+                    
                     <div class="mb-3">
-                        <label for="message" class="form-label"></label>
+                        <label for="message" class="form-label">Your Message</label>
                         <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
                     </div>
-                
-                
+                    
+                    <!-- reCAPTCHA do Netlify -->
+                    <div class="g-recaptcha" data-sitekey="6LcSJtIqAAAAAIo9Pi39ncUrqfcPYgyOnD4XjQ3B"></div>
+                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                    
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 
