@@ -379,7 +379,6 @@ document.addEventListener('click', function (event) {
                         <input type="email" class="form-control" id="email" name="email" required placeholder="Your Email">
                     </div>
                     
-                    <!-- Telefone -->
                     <div class="mb-3">
                         <label for="phone" class="form-label"></label>
                         <input 
@@ -388,15 +387,10 @@ document.addEventListener('click', function (event) {
                             id="phone" 
                             name="phone" 
                             placeholder="Phone Number" 
-                            maxlength="16" 
-                            oninput="formatPhoneNumber(this)"
-                            pattern="^\+353\s\d{2}\s\d{3}\s\d{3}$" 
-                            title="Please enter a valid Irish phone number, e.g., +353 83 848 1886"
+                            maxlength="16"
                             required>
-                        <div class="invalid-feedback">
-                            Please add a valid phone number with the country code.
-                        </div>
                     </div>
+                    
                     
                     <!-- Tipo de Evento -->
                     <div class="mb-3">
