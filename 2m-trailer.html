@@ -642,11 +642,14 @@ document.addEventListener('click', function (event) {
             <div class="about" style="background-color: var(--shape-color-01);">
                 <h2>Contact Us</h2>
                 <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                    <!-- Campo oculto necessário para Netlify identificar o formulário -->
+                    <input type="hidden" name="form-name" value="contact">
+                
                     <div class="mb-3">
                         <label for="name" class="form-label"></label>
                         <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
                     </div>
-                    
+                
                     <div class="mb-3">
                         <label for="email" class="form-label"></label>
                         <input type="email" class="form-control" id="email" name="email" required placeholder="Your Email">
@@ -663,7 +666,6 @@ document.addEventListener('click', function (event) {
                             maxlength="16"
                             required>
                     </div>
-                    
                 
                     <div class="mb-3">
                         <label for="province" class="form-label"></label>
@@ -711,9 +713,10 @@ document.addEventListener('click', function (event) {
                     <!-- reCAPTCHA do Netlify -->
                     <div class="g-recaptcha" data-sitekey="6LcSJtIqAAAAAIo9Pi39ncUrqfcPYgyOnD4XjQ3B"></div>
                     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+                
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                
                 
                 <div class="tittle-div">
                     <p>If you need any further information please contact us or give us a ring as we will be happy to give any further advice you may need.
